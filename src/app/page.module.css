@@ -1,3 +1,17 @@
-.page_section {
+.main_container {
   display: flex;
+}
+
+.div_section {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-blue-700);
+}
+
+@media (max-width: 768px) {
+  .main_container {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
 }

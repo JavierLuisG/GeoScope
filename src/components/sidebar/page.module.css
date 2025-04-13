@@ -6,7 +6,7 @@
   background-color: var(--color-bg-secondary) !important;
   height: 100vh;
   width: 2.7em;
-  padding: 0.4em;
+  padding: 0.4em 0.4em 0.4em 0.3em;
   gap: 0.4em;
 }
 
@@ -34,13 +34,27 @@
   background-color: var(--color-bg-secondary);
 }
 
-.img_sidebar {
-  min-width: 0.9em;
-  min-height: 0.9em;
+.logo {
+  min-width: 2em;
+  color: var(--color-zinc-50);
 }
 
-.principal_icon {
-  min-width: 1.5em !important;
+.tooltip_sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-primary);
+  border-radius: 0.3em;
+  height: 2.7em !important;
+  font-size: 0.9em !important;
+  pointer-events: none;
+}
+
+.icons {
+  color: var(--color-zinc-50);
+  min-width: 1em;
+  min-height: 1em;
 }
 
 .sidebar_btn {
@@ -57,18 +71,6 @@
   background-color: var(--color-bg-opacy);
 }
 
-.tooltip_sidebar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-bg-secondary);
-  color: var(--color-primary);
-  border-radius: 0.3em;
-  height: 2.7em !important;
-  font-size: 0.9em !important;
-  pointer-events: none;
-}
-
 .sidebar_btn_us {
   margin: 0.4em 0em;
   border: 1px solid var(--color-bg-quaternary);
@@ -80,16 +82,75 @@
   font-size: 0.7em !important;
 }
 
+.text_name_btn {
+  display: none;
+}
+
 :is(
   .sidebar_section,
-  .sidebar_article_up,
+  .sidebar_article,
   .sidebar_logo,
+  .logo,
+  .tooltip_sidebar,
+  .icons,
   .sidebar_btn,
-  .img_sidebar,
-  .principal_icon,
   .sidebar_btn_us,
   .text_us,
-  .tooltip_sidebar
   ) {
   font-size: clamp(0.8rem, 0.8vw + 0.8rem, 7rem);
+}
+
+@media (max-width: 768px) {
+  .sidebar_section {
+    flex-direction: row;
+    width: 100%;
+    height: max-content;
+    gap: 0em;
+  }
+
+  .sidebar_article {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .hr_line {
+    display: none;
+  }
+
+  .tooltip_sidebar {
+    display: none;
+  }
+
+  .sidebar_logo {
+    display: none;
+  }
+
+  .sidebar_btn {
+    width: max-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2em;
+    padding: 0.2em;
+  }
+
+  .sidebar_btn:hover {
+    background-color: var(--color-bg-secondary);
+  }
+
+  .icons {
+    max-width: 1.1em !important;
+  }
+
+  .text_name_btn {
+    display: block;
+    font-size: 0.7em;
+    color: var(--color-text-secondary);
+  }
+
+  .sidebar_btn_us {
+    display: none;
+  }
 }
