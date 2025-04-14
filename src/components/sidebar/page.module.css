@@ -105,6 +105,7 @@
     flex-direction: row;
     width: 100%;
     height: max-content;
+    padding: 0.2em 0.4em 0.1em;
     gap: 0em;
   }
 
@@ -132,7 +133,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.2em;
+    gap: 0em;
     padding: 0.2em;
   }
 
@@ -141,7 +142,7 @@
   }
 
   .icons {
-    max-width: 1.1em !important;
+    max-width: 1.4em !important;
   }
 
   .text_name_btn {

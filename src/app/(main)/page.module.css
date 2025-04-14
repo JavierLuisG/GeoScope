@@ -2,10 +2,14 @@
   display: flex;
 }
 
-.div_section {
-  width: 100%;
+.section_options {
+  width: 17em;
   height: 100vh;
-  background-color: var(--color-blue-700);
+  border-right: 1px solid var(--color-border);
+}
+
+:is(.section_options) {
+  font-size: clamp(0.8rem, 0.8vw + 0.8rem, 7rem);
 }
 
 @media (max-width: 768px) {

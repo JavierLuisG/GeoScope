@@ -13,15 +13,15 @@ interface PlacementItem {
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
   name: string;
   path: string;
-}
+};
 
-const Page: React.FC = () => {
+const SidebarMenu: React.FC = () => {
   const placement: PlacementItem[] = [
-    { icon: Satellite, name: "New Image", path: "/" },
-    { icon: Earth, name: "Existing Image", path: "/" },
-    { icon: MyAOI, name: "My Areas", path: "/" },
-    { icon: Shopping, name: "My Cart", path: "/" },
-    { icon: Profile, name: "My Profile", path: "/" }
+    { icon: Satellite, name: "Image", path: "/" },
+    { icon: Earth, name: "Explore", path: "/explore" },
+    { icon: MyAOI, name: "Areas", path: "/" },
+    { icon: Shopping, name: "Cart", path: "/" },
+    { icon: Profile, name: "Profile", path: "/" }
   ]
 
   return (
@@ -63,7 +63,7 @@ const Page: React.FC = () => {
         </Link>
       </article>
     </section>
-  )
-}
+  );
+};
 
-export default Page;
+export default SidebarMenu;
