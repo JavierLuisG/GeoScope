@@ -1,7 +1,9 @@
 "use client";
 
+import { usePathname, useRouter } from "next/navigation";
 import { Tooltip, Link, Button } from "@heroui/react";
 import styles from "./page.module.css";
+
 import Logo from '../../assets/icons/logo.svg';
 import Satellite from '../../assets/icons/satellite.svg';
 import Earth from '../../assets/icons/earth.svg';
@@ -16,13 +18,24 @@ interface PlacementItem {
 };
 
 const SidebarMenu: React.FC = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const placement: PlacementItem[] = [
-    { icon: Satellite, name: "Image", path: "/" },
+    { icon: Satellite, name: "Image", path: "/explore" },
     { icon: Earth, name: "Explore", path: "/explore" },
-    { icon: MyAOI, name: "Areas", path: "/" },
-    { icon: Shopping, name: "Cart", path: "/" },
-    { icon: Profile, name: "Profile", path: "/" }
+    { icon: MyAOI, name: "Areas", path: "/explore" },
+    { icon: Shopping, name: "Cart", path: "/explore" },
+    { icon: Profile, name: "Profile", path: "/explore" }
   ]
+
+  const handleNavigation = (path: string) => {
+    if (pathname === path) {
+      router.push("/"); // Oculta el layout (main)
+    } else {
+      router.push(path); // Muestra el layout (main)
+    }
+  };
 
   return (
     <section className={styles.sidebar_section}>
@@ -35,24 +48,27 @@ const SidebarMenu: React.FC = () => {
           <Logo className={`${styles.logo}`} />
         </Button>
         <hr aria-orientation="horizontal" className={styles.hr_line} />
-        {placement.map((item) => (
-          <Tooltip
-            key={item.name}
-            placement="right"
-            className={styles.tooltip_sidebar}
-            content={item.name}
-            offset={14}
-          >
-            <Button
-              className={styles.sidebar_btn}
-              as={Link}
-              href={item.path}
+        {placement.map((item) => {
+          const isActive = pathname === item.path;
+          return (
+            <Tooltip
+              key={item.name}
+              placement="right"
+              className={styles.tooltip_sidebar}
+              content={item.name}
+              offset={14}
             >
-              <item.icon className={`${styles.icons}`} />
-              <p className={styles.text_name_btn}>{item.name}</p>
-            </Button>
-          </Tooltip>
-        ))}
+              <Button
+                className={`${styles.sidebar_btn} ${isActive ? styles.active : ""}`}
+                // as={Link}
+                onPress={() => handleNavigation(item.path)}
+              >
+                <item.icon className={`${styles.icons}`} />
+                <p className={styles.text_name_btn}>{item.name}</p>
+              </Button>
+            </Tooltip>
+          );
+        })}
       </article>
       <article>
         <hr aria-orientation="horizontal" className={styles.hr_line} />

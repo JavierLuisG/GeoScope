@@ -1,8 +1,10 @@
 "use client";
 
+import styles from "./page.module.css";
+
 const Home = () => {
   return (
-    <section>
+    <section className={styles.home_section}>
       <h1>Welcome to Geo Scope</h1>
     </section>
   );

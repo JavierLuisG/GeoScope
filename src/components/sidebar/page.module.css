@@ -86,6 +86,11 @@
   display: none;
 }
 
+.active {
+  background-color: var(--color-bg-opacy);
+  border-left: 2px solid var(--color-zinc-50);
+}
+
 :is(
   .sidebar_section,
   .sidebar_article,
