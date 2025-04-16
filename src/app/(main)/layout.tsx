@@ -11,7 +11,13 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <main className={styles.main_container}>
-      <SidebarMenu />
+      <div className={styles.section_sidebar}>
+        <SidebarMenu />
+      </div>
+
+      <div className={styles.section_map}>
+      </div>
+      
       {!isRoot && (
         <section className={styles.section_options}>
           {children}

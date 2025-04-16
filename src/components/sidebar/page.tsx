@@ -60,7 +60,6 @@ const SidebarMenu: React.FC = () => {
             >
               <Button
                 className={`${styles.sidebar_btn} ${isActive ? styles.active : ""}`}
-                // as={Link}
                 onPress={() => handleNavigation(item.path)}
               >
                 <item.icon className={`${styles.icons}`} />
