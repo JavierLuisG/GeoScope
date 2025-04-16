@@ -39,11 +39,13 @@
   --color-bg-secondary: var(--color-terniary);
   --color-bg-terniary: var(--color-zinc-50);
   --color-bg-quaternary: var(--color-zinc-100);
+  --color-bg-quinary: var(--color-zinc-200);
 
   --color-bg-opacy: #3f3f4686;
 
   --color-border: var(--color-zinc-300);
-  --color-border-secondary: var(--color-zinc-500);
+  --color-border-secondary: var(--color-zinc-400);
+  --color-border-terniary: var(--color-zinc-500);
 }
 
 * {
