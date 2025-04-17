@@ -6,7 +6,7 @@ import Search from "../../../components/search/page";
 const ExploreLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <section className={styles.explore_layout}>
-      <div>
+      <div className={styles.explore_search}>
         <Search />
       </div>
       <header className={styles.header}>
