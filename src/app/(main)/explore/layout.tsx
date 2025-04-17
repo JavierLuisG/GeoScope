@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./page.module.css";
+import styles from "./layout.module.css";
 import Search from "../../../components/search/page";
 
 const ExploreLayout = ({ children }: { children: React.ReactNode }) => {

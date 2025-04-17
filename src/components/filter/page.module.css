@@ -1,0 +1,33 @@
+.icon_filter {
+  padding: 0.5em 0.5em 0.5em 0;
+}
+
+.btn_icon {
+  width: 1.7em;
+  min-width: 40px;
+  height: 1.7em;
+  min-height: 40px;
+  background-color: var(--color-bg);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_icon:hover {
+  background-color: var(--color-bg-quinary);
+  border-radius: 0.3em;
+}
+
+.icon_mage {
+  width: 1.1em;
+  min-width: 24px;
+}
+
+:is(.icon_filter,
+  .btn_icon,
+  .icon_mage,
+) {
+  font-size: clamp(0.8rem, 0.8vw + 0.8rem, 7rem);
+}

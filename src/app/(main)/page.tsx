@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./page.module.css";
+import styles from "./layout.module.css";
 
 const Home = () => {
   return (

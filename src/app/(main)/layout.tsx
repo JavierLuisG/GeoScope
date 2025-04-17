@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import SidebarMenu from "../../components/sidebar/page";
-import styles from "./page.module.css";
+import styles from "./layout.module.css";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
