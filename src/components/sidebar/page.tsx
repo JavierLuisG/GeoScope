@@ -69,7 +69,7 @@ const SidebarMenu: React.FC = () => {
           );
         })}
       </article>
-      <article>
+      <article className={styles.sidebar_article_us}>
         <hr aria-orientation="horizontal" className={styles.hr_line} />
         <Link href={"/"}>
           <button className={`${styles.sidebar_btn} ${styles.sidebar_btn_us}`}>
