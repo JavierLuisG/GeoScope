@@ -65,13 +65,13 @@
 }
 
 .icon_search {
-  color: var(--color-zinc-600);
-  width: 1em;
+  color: var(--color-zinc-800);
+  width: 1.1em;
 }
 
 .icon_square {
   color: var(--color-zinc-400);
-  width: 1em;
+  width: 1.1em;
 }
 
 .icon_square:hover {
@@ -87,13 +87,26 @@
   .icon_search,
   .icon_square,
 ) {
-  font-size: clamp(0.8rem, 0.8vw + 0.8rem, 7rem);
+  font-size: clamp(0.8rem, 0.8vw + 0.8rem, 4rem);
 }
 
 @media (max-width: 768px) {
+
   .label_search,
   .btn_search_container {
     min-width: 48px;
+  }
+
+  :is(.search_section,
+    .input_container,
+    .label_search,
+    .input_search,
+    .btn_search_container,
+    .btn_search,
+    .icon_search,
+    .icon_square,
+  ) {
+    font-size: clamp(1.2rem, 1.2vw + 0.5rem, 7rem);
   }
 }
 
