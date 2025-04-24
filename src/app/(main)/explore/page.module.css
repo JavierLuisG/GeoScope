@@ -78,4 +78,14 @@
   .btn_createAOI {
     display: none;
   }
+
+  :is(.formAOI_container,
+    .form_text_container,
+    .text_quetion,
+    .text_info,
+    .btn_createAOI,
+    .icon_search,
+  ) {
+    font-size: clamp(1.2rem, 1.2vw + 0.5rem, 7rem);
+  }
 }
