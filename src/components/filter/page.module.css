@@ -13,11 +13,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 0.3em;
 }
 
 .btn_icon:hover {
   background-color: var(--color-bg-quinary);
-  border-radius: 0.3em;
 }
 
 .icon_mage {
@@ -30,4 +30,10 @@
   .icon_mage,
 ) {
   font-size: clamp(0.8rem, 0.8vw + 0.8rem, 7rem);
+}
+
+@media (max-width: 768px) {
+  .icon_filter {
+    padding: 0em;
+  }
 }

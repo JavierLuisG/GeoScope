@@ -29,10 +29,16 @@
   overflow-y: auto;
 }
 
+.filter_container {
+  display: none;
+}
+
 :is(.main_container,
   .section_options,
   .section_sidebar,
-  .section_map) {
+  .section_map,
+  .filter_container,
+) {
   font-size: clamp(1rem, 1vw + 0.5rem, 7rem);
 }
 
@@ -62,5 +68,13 @@
     left: 0;
     right: 0;
     bottom: 0;
+  }
+
+  .filter_container {
+    display: block;
+    width: fit-content;
+    position: absolute;
+    right: 0.5em;
+    bottom: 16em;
   }
 }

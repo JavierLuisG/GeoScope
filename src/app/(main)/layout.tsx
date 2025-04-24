@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import SidebarMenu from "../../components/sidebar/page";
+import Filter from "../../components/filter/page";
 import styles from "./layout.module.css";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
@@ -18,6 +19,9 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
             {children}
           </section>
         )}
+        <div className={styles.filter_container}>
+          <Filter />
+        </div>
       </div>
       <div className={styles.section_map}>
       </div>

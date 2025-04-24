@@ -4,6 +4,7 @@
   justify-content: flex-end;
   align-items: center;
   background-color: var(--color-bg);
+  position: relative;
 }
 
 .formAOI_container {
@@ -56,11 +57,25 @@
 }
 
 :is(.formAOI_container,
-  .form_text_container, 
+  .form_text_container,
   .text_quetion,
   .text_info,
   .btn_createAOI,
   .icon_search,
-  ) {
+) {
   font-size: clamp(0.8rem, 0.8vw + 0.8rem, 7rem);
+}
+
+@media (max-width: 768px) {
+  .formAOI_container {
+    padding: 0em 0.5em;
+  }
+
+  .filter_container {
+    display: none;
+  }
+
+  .btn_createAOI {
+    display: none;
+  }
 }

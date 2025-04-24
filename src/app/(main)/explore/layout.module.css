@@ -18,6 +18,10 @@
 }
 
 @media (max-width: 768px) {
+  .explore_layout {
+    justify-content: center;
+  }
+  
   .explore_search {
     width: calc(100% - 1em);
     height: 2em;
