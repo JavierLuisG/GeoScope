@@ -78,9 +78,19 @@
 
   .explore_option {
     width: 100%;
-    position: fixed;
-    bottom: 10.33em;
+    position: absolute;
+    bottom: 10.32em;
     background-color: transparent;
+  }
+
+  .link_commercial,
+  .link_open {
+    background-color: #020f1e4e;
+  }
+
+  .link_commercial:hover,
+  .link_open:hover {
+    background-color: #020f1e89;
   }
 
   :is(.explore_layout,
