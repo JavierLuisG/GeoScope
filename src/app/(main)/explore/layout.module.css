@@ -86,6 +86,7 @@
   .link_commercial,
   .link_open {
     background-color: #020f1e4e;
+    border-bottom: none;
   }
 
   .link_commercial:hover,
