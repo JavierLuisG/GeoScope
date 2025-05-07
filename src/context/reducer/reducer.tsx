@@ -35,7 +35,7 @@ export const initialState: State = {
   detailImage: null,
 }
 
-type Action =
+export type Action =
   | { type: "GET_OPENDATA"; payload: ImageOpenData[] }
   | { type: "NEXT_PAGE_OPENDATA"; payload: string | null }
   | { type: "GET_LOADINGMORE_OPENDATA"; payload: ImageOpenData[] }
