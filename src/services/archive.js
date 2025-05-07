@@ -1,9 +1,7 @@
 import axios from "axios";
-import apiKey from "../../middleware/config.json";
 
 export const skyfiPlatformApiArchives = async (dispatch, filters) => {
     try {
-        let headers = { "X-Skyfi-Api-Key": apiKey.apiKey };
         let request = {
             aoi: filters.aoi,
             fromDate: "2024-01-01T00:00:00",
@@ -18,9 +16,8 @@ export const skyfiPlatformApiArchives = async (dispatch, filters) => {
             page_size: 10,
         };
         let archives_response = await axios.post(
-            "/platform-api/archives",
+            "/api/skyfi/archives",
             request,
-            { headers: headers }
         );
         let archives = archives_response.data;
         dispatch({ type: "GET_OPENDATA", payload: archives.archives });
@@ -32,7 +29,7 @@ export const skyfiPlatformApiArchives = async (dispatch, filters) => {
 
 export const continueCatalogArchives = async (nextPage, dispatch) => {
     try {
-        let headers = { "X-Skyfi-Api-Key": apiKey.apiKey };
+        let headers = { "X-Skyfi-Api-Key": apiKey };
         let archives_response = await axios.get(nextPage, { headers: headers });
         let archives = archives_response.data;
         dispatch({ type: "GET_LOADINGMORE_OPENDATA", payload: archives.archives });
@@ -44,14 +41,10 @@ export const continueCatalogArchives = async (nextPage, dispatch) => {
 
 export const skyfiPlatformApiGetArchive = async (id, dispatch) => {
     try {
-        let headers = { "X-Skyfi-Api-Key": apiKey.apiKey }
         let archive_response = await axios.get(
-            `/platform-api/archives/${id}`,
-            { headers: headers }
+            `/api/skyfi/archives/${id}`,
         );
         let archive = archive_response.data;
-        console.log("archive", archive);
-        
         dispatch({ type: "GET_DETAILIMAGE", payload: archive });
     } catch (error) {
         console.log("Error in skyfiPlatformApiGetArchive, " + error);
