@@ -5,13 +5,20 @@ import { usePathname } from "next/navigation";
 import styles from "./layout.module.css";
 import Search from "../../../components/search/page";
 import { Link } from "@heroui/react";
+import { useEffect, useState } from "react";
 
 const ExploreLayout = ({ children }: { children: React.ReactNode }) => {
+  const [savedAoi, setSavedAoi] = useState<string | null>(null);
   const pathname = usePathname();
+  
   const isCommercialActive = pathname.includes("/commercial");
   const isOpenActive = pathname.includes("/open");
 
-  const aoi = localStorage.getItem("aoi") || null;
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setSavedAoi(localStorage.getItem("aoi"));
+    }
+  }, []);
 
   return (
     <section className={styles.explore_layout}>
@@ -21,7 +28,7 @@ const ExploreLayout = ({ children }: { children: React.ReactNode }) => {
       <header className={styles.explore_option}>
         <Link
           className={`${styles.link_commercial} ${isCommercialActive ? styles.active : ''}`}
-          href={!aoi ? "/explore/commercial" : `/explore/commercial/${aoi}`}
+          href={!savedAoi ? "/explore/commercial" : `/explore/commercial/${savedAoi}`}
         >
           <button className={styles.commercial}>
             Commercial
@@ -29,7 +36,7 @@ const ExploreLayout = ({ children }: { children: React.ReactNode }) => {
         </Link>
         <Link
           className={`${styles.link_open} ${isOpenActive ? styles.active : ''}`}
-          href={!aoi ? "/explore/open" : `/explore/open/${aoi}`}
+          href={!savedAoi ? "/explore/open" : `/explore/open/${savedAoi}`}
         >
           <button className={styles.open}>
             Open
