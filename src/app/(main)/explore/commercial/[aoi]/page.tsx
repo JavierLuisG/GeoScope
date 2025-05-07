@@ -27,8 +27,9 @@ const CommercialAOIPage = () => {
   const handleScroll = () => {
     const cont = containerRef.current;
     if (cont && cont.scrollTop + cont.clientHeight >= cont.scrollHeight - 5) {
-      state.nextPage !== null &&
+      if (state.nextPage !== null) {
         continueCatalogArchives(state.nextPage, dispatch);
+      }
     }
   };
 

@@ -1,4 +1,3 @@
-// app/api/skyfi/archives/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
 
@@ -19,8 +18,12 @@ export async function POST(req: NextRequest) {
     );
 
     return NextResponse.json(response.data);
-  } catch (error: any) {
-    console.error("Error calling SkyFi API:", error.message);
+  } catch (error: unknown) {
+    let message = "Unknown error";
+    if (error instanceof Error) {
+      message = error.message;
+    }
+    console.error("Error calling SkyFi API:", message);
     return new NextResponse(
       JSON.stringify({ error: "Failed to fetch SkyFi data" }),
       { status: 500 }
