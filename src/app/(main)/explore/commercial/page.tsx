@@ -1,12 +1,14 @@
 "use client";
 
-import styles from "./page.module.css";
+import Explore from "../page";
 
 const CommercialPage = () => {
+  let aoi = localStorage.getItem("aoi") || null;
+
   return (
-    <section className={styles.commercial_section}>
-      <p>Welcome Commercial</p>
-    </section>
+    <>
+      {!aoi && <Explore />}
+    </>
   );
 };
 

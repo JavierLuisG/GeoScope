@@ -1,0 +1,46 @@
+.container_cards {
+  padding: 0 0.5em 0.5em 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.link_taskingorder {
+  width: 100%;
+  padding: 0.5em 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9em;
+  border: 1px solid var(--color-border);
+  border-radius: 0.3em;
+}
+
+.link_taskingorder>p {
+  font-size: 0.8em !important;
+  color: var(--color-text-primary);
+  text-align: center;
+  width: 100%;
+  height: 1.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link_taskingorder>a {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-primary);
+  width: 100%;
+  height: 1.5em;
+  border-radius: 0.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:is(.container_cards,
+  .link_taskingorder,
+) {
+  font-size: clamp(1rem, 1vw + 0.5rem, 7rem);
+}

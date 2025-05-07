@@ -1,15 +1,11 @@
 "use client";
 
 import styles from "./page.module.css";
-import Filter from "../../../components/filter/page";
 import SearchPlus from "../../../assets/icons/search-plus.svg";
 
 const Explore = () => {
   return (
     <section> 
-      <div className={styles.filter_container}>
-        <Filter />
-      </div>
       <div className={styles.formAOI_container}>
         <SearchPlus className={styles.icon_search} />
         <div className={styles.form_text_container}>

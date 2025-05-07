@@ -1,12 +1,14 @@
 "use client";
 
-import styles from "./page.module.css";
+import Explore from "../page";
 
 const OpenPage = () => {
+  let aoi = localStorage.getItem("aoi") || null;
+  
   return (
-    <section className={styles.open_section}>
-      <p>Welcome Open</p>
-    </section>
+    <>
+      {!aoi && <Explore />}
+    </>
   );
 };
 
