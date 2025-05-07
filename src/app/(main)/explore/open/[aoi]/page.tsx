@@ -21,7 +21,7 @@ const OpenAOIPage = () => {
       OpenData: filters.openData,
     };
     skyfiPlatformApiArchives(dispatch, filterOpen);
-  }, []);
+  }, [dispatch, params.aoi]);
 
   return (
     <>
@@ -29,7 +29,7 @@ const OpenAOIPage = () => {
         (<></>) :
         (<section className={styles.container_cards}>
           <div className={styles.link_taskingorder}>
-            <p>Not finding what you're looking for?</p>
+            <p>Not finding what you&apos;re looking for?</p>
             <Link href={"#"}>ORDER NEW IMAGE</Link>
           </div>
         </section>)

@@ -11,7 +11,7 @@ const ExploreLayout = ({ children }: { children: React.ReactNode }) => {
   const isCommercialActive = pathname.includes("/commercial");
   const isOpenActive = pathname.includes("/open");
 
-  let aoi = localStorage.getItem("aoi") || null;
+  const aoi = localStorage.getItem("aoi") || null;
 
   return (
     <section className={styles.explore_layout}>

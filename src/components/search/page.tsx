@@ -9,7 +9,7 @@ const Search: React.FC = () => {
   const router = useRouter();
 
   const handleClickForm = () => {
-    let aoi = "POLYGON((-98.274391 30.167005, -97.422951 30.167005, -97.422951 31.008717, -98.274391 31.008717, -98.274391 30.167005))"
+    const aoi = "POLYGON((-98.274391 30.167005, -97.422951 30.167005, -97.422951 31.008717, -98.274391 31.008717, -98.274391 30.167005))"
     if (aoi) {
       localStorage.setItem("aoi", encodeURIComponent(aoi));
       router.push(`/explore/commercial/${encodeURIComponent(aoi)}`);

@@ -11,6 +11,7 @@ import { filters } from "../../../../../utils/filtersArchiveData";
 const CommercialAOIPage = () => {
   const { dispatch } = useContextGlobal();
   const params = useParams();
+  
   useEffect(() => {
     const filterCommercial = {
       aoi: decodeURIComponent(params.aoi as string),
@@ -20,7 +21,7 @@ const CommercialAOIPage = () => {
       OpenData: filters.openData,
     };
     skyfiPlatformApiArchives(dispatch, filterCommercial);
-  }, []);
+  }, [dispatch, params.aoi]);
 
   return (
     <>
@@ -28,7 +29,7 @@ const CommercialAOIPage = () => {
         (<></>) :
         (<section className={styles.container_cards}>
           <div className={styles.link_taskingorder}>
-            <p>Not finding what you're looking for?</p>
+          <p>Not finding what you&apos;re looking for?</p>
             <Link href={"#"}>ORDER NEW IMAGE</Link>
           </div>
         </section>)

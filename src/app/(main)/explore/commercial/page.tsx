@@ -3,7 +3,7 @@
 import Explore from "../page";
 
 const CommercialPage = () => {
-  let aoi = localStorage.getItem("aoi") || null;
+  const aoi = localStorage.getItem("aoi") || null;
 
   return (
     <>
