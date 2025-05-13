@@ -28,10 +28,13 @@
 }
 
 .info_card {
-  font-size: 0.9em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .info_card p {
+  line-height: 1;
   font-size: 0.7em !important;
   color: var(--color-text-primary);
 }
@@ -62,6 +65,7 @@
 }
 
 .price h2 {
+  line-height: 1;
   font-size: 1em !important;
   font-weight: 700;
   color: var(--color-text-primary);
@@ -74,10 +78,13 @@
 
 .delivery {
   text-align: end;
-  font-size: "0.7em";
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
 }
 
-.text_delivery { 
+.text_delivery {
+  line-height: 1;
   font-size: 0.6em !important;
   color: var(--color-text-quaternary) !important;
 }
@@ -92,8 +99,8 @@
   .price_container,
   .price,
   .price h2,
+  .text_price,
   .delivery,
-  .text_delivery
-) {
-  font-size: clamp(1rem, 1vw + 0.5rem, 7rem);
+  .text_delivery) {
+  font-size: clamp(1rem, 1vw + 0.5rem, 4rem);
 }
