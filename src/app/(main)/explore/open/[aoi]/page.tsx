@@ -7,6 +7,32 @@ import { useParams } from "next/navigation";
 import { useContextGlobal } from "@/context/globalContext";
 import { continueCatalogArchives, skyfiPlatformApiArchives } from "../../../../../services/archive";
 import { filters } from "../../../../../utils/filtersArchiveData";
+import CardImage from "../../../../../components/cardImage/page";
+
+interface Image {
+  archiveId: string;
+  provider: string;
+  constellation: string;
+  productType: string;
+  platformResolution: number;
+  resolution: string;
+  captureTimestamp: string;
+  cloudCoveragePercent: number;
+  offNadirAngle: number;
+  footprint: string;
+  minSqKm: number;
+  maxSqKm: number;
+  priceForOneSquareKm: number;
+  priceFullScene: number;
+  openData: boolean;
+  totalAreaSquareKm: number;
+  deliveryTimeHours: number;
+  thumbnailUrls: Record<string, string>;
+  gsd: number;
+  tilesUrl: string;
+  overlapRatio: number;
+  overlapSqkm: number;
+}
 
 const OpenAOIPage = () => {
   const { state, dispatch } = useContextGlobal();
@@ -44,14 +70,8 @@ const OpenAOIPage = () => {
             onScroll={handleScroll} // Detecta el evento de scroll
           >
             <section className={styles.container_cards}>
-              {state.imageOpen.map((image, index) => (
-                <div key={index} className={styles.card}>
-                  <img src={image.thumbnailUrls[0]} alt="Thumbnail" />
-                  <p>{image.captureTimestamp}</p>
-                  <p>{image.provider}</p>
-                  <p>{image.productType}</p>
-                  <p>{image.cloudCoveragePercent}%</p>
-                </div>
+              {state.imageOpen?.map((image: Image) => (
+                <CardImage key={image.archiveId} image={image} />
               ))}
               <div className={styles.link_taskingorder}>
                 <p>Not finding what you&apos;re looking for?</p>

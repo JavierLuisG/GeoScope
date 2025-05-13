@@ -34,6 +34,7 @@
   --color-text-secondary: var(--color-primary);
   --color-text-terniary: var(--color-secondary);
   --color-text-quaternary: var(--color-zinc-500);
+  --color-text-quinary: #010f1f1b;
 
   --color-bg: var(--color-primary);
   --color-bg-secondary: var(--color-terniary);
