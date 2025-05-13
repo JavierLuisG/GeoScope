@@ -57,7 +57,7 @@ const CardImageComponent = ({ image }: CardImageProps) => {
       return text
         .toLowerCase()
         .split(" ")
-        .map((word: any) => word.charAt(0).toUpperCase() + word.slice(1))
+        .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ");
     } else {
       return text;
@@ -98,7 +98,7 @@ const CardImageComponent = ({ image }: CardImageProps) => {
    * 1. Si el valor de "gsd" es menor a 100, se devuelve el valor redondeado en centímetros, agregando "cm" al final.
    * 2. Si el valor es igual o mayor a 100, se convierte a metros dividiendo por 100 y agregando "m" al final.
    */
-  const sizeResolution = (gsd: any) => {
+  const sizeResolution = (gsd: number) => {
     if (gsd < 100) {
       return gsd.toFixed(0) + "cm";
     } else {
