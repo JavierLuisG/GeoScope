@@ -58,6 +58,11 @@
   position: relative;
 }
 
+.explore_content {
+  flex: 1; /* Ocupa el espacio restante */
+  overflow-y: auto;
+}
+
 :is(.explore_layout,
   .explore_search,
   .explore_option,

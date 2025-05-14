@@ -65,7 +65,7 @@ const CommercialAOIPage = () => {
         (<></>) :
         (
           <div
-            className="scroll_container"
+            className={styles.scroll_container}
             ref={containerRef}
             onScroll={handleScroll} // Detecta el evento de scroll
           >
