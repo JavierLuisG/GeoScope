@@ -29,9 +29,10 @@ export const skyfiPlatformApiArchives = async (dispatch, filters) => {
 
 export const continueCatalogArchives = async (nextPage, dispatch) => {
   try {
-    let headers = { "X-Skyfi-Api-Key": apiKey };
-    let archives_response = await axios.get(nextPage, { headers: headers });
-    let archives = archives_response.data;
+    const archives_response = await axios.get(
+      `/api/skyfi/archives/continue?nextPage=${nextPage}`
+    );
+    const archives = archives_response.data;
     dispatch({ type: "GET_LOADINGMORE_OPENDATA", payload: archives.archives });
     dispatch({ type: "NEXT_PAGE_OPENDATA", payload: archives.nextPage });
   } catch (error) {

@@ -3,9 +3,9 @@ import axios from "axios";
 
 export async function POST(req: NextRequest) {
   const apiKey = process.env.SKYFI_API_KEY;
-  const body = await req.json();
 
   try {
+    const body = await req.json();
     const response = await axios.post(
       "https://app.skyfi.com/platform-api/archives",
       body,
@@ -23,7 +23,11 @@ export async function POST(req: NextRequest) {
     if (error instanceof Error) {
       message = error.message;
     }
-    console.error("Error calling SkyFi API:", message);
+
+    if (process.env.NODE_ENV === "development") {
+      console.error("SkyFi API error (POST):", message);
+    }
+
     return new NextResponse(
       JSON.stringify({ error: "Failed to fetch SkyFi data" }),
       { status: 500 }
