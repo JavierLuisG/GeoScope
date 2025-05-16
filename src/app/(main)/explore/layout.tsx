@@ -46,7 +46,7 @@ const ExploreLayout = ({ children }: { children: React.ReactNode }) => {
       <div className={styles.filter_container}>
         <Filter />
       </div>
-      <div className={styles.explore_content}>
+      <div>
         {children}
       </div>
     </section>

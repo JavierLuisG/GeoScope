@@ -22,8 +22,9 @@
 }
 
 .btn_createAOI {
-  height: 2em;
-  font-size: 0.8em !important;
+  height: 2.2em;
+  width: 20em;
+  font-size: 0.7em !important;
   font-weight: bold;
   padding: 0 1em;
   display: flex;
@@ -59,7 +60,8 @@
 
 @media (max-width: 768px) {
   .formAOI_container {
-    padding: 0em 0.5em;
+    padding: 0.5em;
+    gap: 0.3em;
   }
 
   .btn_createAOI {
