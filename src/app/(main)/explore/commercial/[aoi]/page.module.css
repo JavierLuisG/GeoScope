@@ -52,3 +52,24 @@
 ) {
   font-size: clamp(1rem, 1vw + 0.5rem, 7rem);
 }
+
+@media (max-width: 768px) {
+  .container_cards {
+    padding: 0.5em;
+    flex-direction: row;
+    gap: 0.5em;
+  }
+
+  .link_taskingorder {
+    min-width: 18.5em;
+    max-width: 18.5em;
+  }
+
+  :is(.container_cards,
+    .link_taskingorder,
+    .link_taskingorder p,
+    .link_taskingorder a,
+  ) {
+    font-size: clamp(1.2rem, 1vw + 0.5rem, 7rem);
+  }
+}

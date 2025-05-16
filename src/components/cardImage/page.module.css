@@ -104,3 +104,25 @@
   .text_delivery) {
   font-size: clamp(1rem, 1vw + 0.5rem, 4rem);
 }
+
+@media (max-width: 768px) {
+  .card_container {
+    min-width: 18.5em;
+  }
+
+  :is(.card_container,
+    .caracterist_card,
+    .image_card,
+    .info_card,
+    .info_card p,
+    .cloud_p,
+    .icon_cloud,
+    .price_container,
+    .price,
+    .price h2,
+    .text_price,
+    .delivery,
+    .text_delivery) {
+    font-size: clamp(1.2rem, 1vw + 0.5rem, 4rem);
+  }
+}
