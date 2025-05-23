@@ -12,6 +12,7 @@ import Shopping from '../../assets/icons/shopping-cart.svg';
 import Profile from '../../assets/icons/profile.svg';
 
 interface PlacementItem {
+  id: number;
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
   name: string;
   path: string;
@@ -22,11 +23,11 @@ const SidebarMenu: React.FC = () => {
   const pathname = usePathname();
 
   const placement: PlacementItem[] = [
-    { icon: Satellite, name: "Image", path: "/explore" },
-    { icon: Earth, name: "Explore", path: "/explore" },
-    { icon: MyAOI, name: "Areas", path: "/explore" },
-    { icon: Shopping, name: "Cart", path: "/explore" },
-    { icon: Profile, name: "Profile", path: "/explore" }
+    { id: 1, icon: Satellite, name: "Image", path: "/explore" },
+    { id: 2, icon: Earth, name: "Explore", path: "/explore" },
+    { id: 3, icon: MyAOI, name: "Areas", path: "/explore" },
+    { id: 4, icon: Shopping, name: "Cart", path: "/explore" },
+    { id: 5, icon: Profile, name: "Profile", path: "/explore" }
   ]
 
   const handleNavigation = (path: string) => {
@@ -52,6 +53,7 @@ const SidebarMenu: React.FC = () => {
           const isActive = pathname === item.path;
           return (
             <Button
+              key={item.id}
               className={`${styles.sidebar_btn} ${isActive ? styles.active : ""}`}
               onPress={() => handleNavigation(item.path)}
             >
