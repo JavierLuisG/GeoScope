@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import { Tooltip, Link, Button } from "@heroui/react";
+import { Link, Button } from "@heroui/react";
 import styles from "./page.module.css";
 
 import Logo from '../../assets/icons/logo.svg';
@@ -51,21 +51,13 @@ const SidebarMenu: React.FC = () => {
         {placement.map((item) => {
           const isActive = pathname === item.path;
           return (
-            <Tooltip
-              key={item.name}
-              placement="right"
-              className={styles.tooltip_sidebar}
-              content={item.name}
-              offset={14}
+            <Button
+              className={`${styles.sidebar_btn} ${isActive ? styles.active : ""}`}
+              onPress={() => handleNavigation(item.path)}
             >
-              <Button
-                className={`${styles.sidebar_btn} ${isActive ? styles.active : ""}`}
-                onPress={() => handleNavigation(item.path)}
-              >
-                <item.icon className={`${styles.icons}`} />
-                <p className={styles.text_name_btn}>{item.name}</p>
-              </Button>
-            </Tooltip>
+              <item.icon className={`${styles.icons}`} />
+              <p className={styles.text_name_btn}>{item.name}</p>
+            </Button>
           );
         })}
       </article>
