@@ -93,7 +93,7 @@
   .explore_option {
     width: 100%;
     position: absolute;
-    bottom: 10.32em;
+    bottom: 10.5em;
     background-color: transparent;
   }
 
@@ -115,6 +115,7 @@
   .explore_content {
     flex: none;
     padding: 0em 0.5em;
+    height: 100%;
   }
 
   :is(.explore_layout,

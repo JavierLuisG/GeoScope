@@ -1,5 +1,4 @@
 .scroll_container {
-  flex: 1;
   height: 100%;
   overflow-y: auto;
 }
@@ -55,6 +54,10 @@
 }
 
 @media (max-width: 768px) {
+  .scroll_container {
+    display: flex;
+  }
+
   .container_cards {
     padding: 0em;
     flex-direction: row;
@@ -64,6 +67,7 @@
   .link_taskingorder {
     min-width: 18.5em;
     max-width: 18.5em;
+    margin: 0.74em 0em;
   }
 
   :is(.container_cards,
