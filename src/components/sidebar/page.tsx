@@ -50,7 +50,7 @@ const SidebarMenu: React.FC = () => {
         </Button>
         <hr aria-orientation="horizontal" className={styles.hr_line} />
         {placement.map((item) => {
-          const isActive = pathname === item.path;
+          const isActive = pathname.startsWith(item.path);
           return (
             <Button
               key={item.id}
