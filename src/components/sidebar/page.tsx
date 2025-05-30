@@ -23,11 +23,11 @@ const SidebarMenu: React.FC = () => {
   const pathname = usePathname();
 
   const placement: PlacementItem[] = [
-    { id: 1, icon: Satellite, name: "Image", path: "/explore" },
+    { id: 1, icon: Satellite, name: "Image", path: "/selected-images" },
     { id: 2, icon: Earth, name: "Explore", path: "/explore" },
-    { id: 3, icon: MyAOI, name: "Areas", path: "/explore" },
-    { id: 4, icon: Shopping, name: "Cart", path: "/explore" },
-    { id: 5, icon: Profile, name: "Profile", path: "/explore" }
+    { id: 3, icon: MyAOI, name: "Areas", path: "/saved-aoi" },
+    { id: 4, icon: Shopping, name: "Cart", path: "/cart" },
+    { id: 5, icon: Profile, name: "Profile", path: "/profile" }
   ]
 
   const handleNavigation = (path: string) => {
@@ -65,7 +65,7 @@ const SidebarMenu: React.FC = () => {
       </article>
       <article className={styles.sidebar_article_us}>
         <hr aria-orientation="horizontal" className={styles.hr_line} />
-        <Link href={"/"}>
+        <Link href={"/about-us"}>
           <button className={`${styles.sidebar_btn} ${styles.sidebar_btn_us}`}>
             <p className={styles.text_us}>US</p>
           </button>

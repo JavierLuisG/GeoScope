@@ -74,8 +74,8 @@ const OpenAOIPage = () => {
                 <CardImage key={image.archiveId} image={image} />
               ))}
               <div className={styles.link_taskingorder}>
-                <p>Not finding what you&apos;re looking for?</p>
-                <Link href={"#"}>ORDER NEW IMAGE</Link>
+                <p>Already selected some images?</p>
+                <Link href={"/selected-images"}>VIEW SELECTED IMAGES</Link>
               </div>
             </section>
           </div>

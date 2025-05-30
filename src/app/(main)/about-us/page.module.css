@@ -1,0 +1,20 @@
+.aboutus_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0.5em;
+}
+
+:is(.aboutus_section,
+) {
+  font-size: clamp(0.8rem, 0.8vw + 0.8rem, 7rem);
+}
+
+@media (max-width: 768px) {
+
+  :is(.aboutus_section,
+  ) {
+    font-size: clamp(1.2rem, 1.2vw + 0.5rem, 7rem);
+  }
+}
